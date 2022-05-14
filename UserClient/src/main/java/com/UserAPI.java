@@ -80,15 +80,29 @@ public class UserAPI extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
 	 */
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-
-	/**
-	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
-	 */
-	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) 
+			 throws ServletException, IOException 
+			{ 
+			 Map paras = getParasMap(request); 
+			 String output = userObj.updateUser(
+			paras.get("hidItemIDSave").toString(), 
+			 paras.get("username").toString(), 
+			paras.get("password").toString(), 
+			paras.get("accountNumber").toString(), 
+			paras.get("address").toString(),
+			paras.get("nic").toString(), 
+			paras.get("phone").toString(),
+			paras.get("resetCode").toString(),
+			paras.get("userRole").toString()); 
+			response.getWriter().write(output); 
+			} 
+	
+			protected void doDelete(HttpServletRequest request, HttpServletResponse response) 
+			 throws ServletException, IOException 
+			{ 
+			 Map paras = getParasMap(request); 
+			 String output = userObj.deleteUser(paras.get("userID").toString()); 
+			response.getWriter().write(output); 
+			}
 
 }
