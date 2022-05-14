@@ -26,7 +26,7 @@ return;
 var type = ($("#hidItemIDSave").val() == "") ? "POST" : "PUT";
 $.ajax(
 {
-url : "ItemsAPI",
+url : "UserAPI",
 type : type,
 data : $("#formItem").serialize(),
 dataType : "text",
@@ -142,32 +142,10 @@ $("#alertError").show();
 function validateItemForm()
 {
 // CODE
-if ($("#itemCode").val().trim() == "")
+if ($("#username").val().trim() == "")
 {
-return "Insert Item Code.";
+return "Insert User Name";
 }
-// NAME
-if ($("#itemName").val().trim() == "")
-{
-return "Insert Item Name.";
-}
-// PRICE-------------------------------
-if ($("#itemPrice").val().trim() == "")
-{
-return "Insert Item Price.";
-}
-// is numerical value
-var tmpPrice = $("#itemPrice").val().trim();
-if (!$.isNumeric(tmpPrice))
-{
-return "Insert a numerical value for Item Price.";
-}
-// convert to decimal price
-$("#itemPrice").val(parseFloat(tmpPrice).toFixed(2));
-// DESCRIPTION------------------------
-if ($("#itemDesc").val().trim() == "")
-{
-return "Insert Item Description.";
-}
+
 return true;
 }
