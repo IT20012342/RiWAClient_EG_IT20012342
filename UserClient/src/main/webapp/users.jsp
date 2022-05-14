@@ -25,14 +25,18 @@ if (session.getAttribute("Username") == null) {
 			<div class="col-6">
 				<h1>Users Management V10.1</h1>
 				<form id="formItem" name="formItem">
-					Item code: <input id="itemCode" name="itemCode" type="text"
-						class="form-control form-control-sm"> <br> Item name:
-					<input id="itemName" name="itemName" type="text"
-						class="form-control form-control-sm"> <br> Item
-					price: <input id="itemPrice" name="itemPrice" type="text"
-						class="form-control form-control-sm"> <br> Item
-					description: <input id="itemDesc" name="itemDesc" type="text"
-						class="form-control form-control-sm"> <br> <input
+					Username: <input id="username" name="username" type="text"
+						class="form-control form-control-sm"> <br> Password:
+					<input id="password" name="password" type="text"
+						class="form-control form-control-sm"> <br> Account Number: 
+						<input id="accountNumber" name="accountNumber" type="text"
+						class="form-control form-control-sm"> <br> Address: <input id="address" name="address" type="text"
+						class="form-control form-control-sm"> <br> 
+						NIC: <input id="nic" name="nic" type="text" class="form-control form-control-sm"> <br>
+						Phone: <input id="phone" name="phone" type="text" class="form-control form-control-sm"> <br>
+						Reset Code: <input id="resetCode" name="resetCode" type="text" class="form-control form-control-sm"> <br>
+						User Role: <input id="userRole" name="userRole" type="text" class="form-control form-control-sm"> <br>
+						<input
 						id="btnSave" name="btnSave" type="button" value="Save"
 						class="btn btn-primary"> <input type="hidden"
 						id="hidItemIDSave" name="hidItemIDSave" value="">
