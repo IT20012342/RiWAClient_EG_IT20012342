@@ -46,10 +46,14 @@ $(document).on("click", ".btnUpdate", function(event)
 
 {
 $("#hidItemIDSave").val($(this).data("itemid"));
-$("#itemCode").val($(this).closest("tr").find('td:eq(0)').text());
-$("#itemName").val($(this).closest("tr").find('td:eq(1)').text());
-$("#itemPrice").val($(this).closest("tr").find('td:eq(2)').text());
-$("#itemDesc").val($(this).closest("tr").find('td:eq(3)').text());
+$("#username").val($(this).closest("tr").find('td:eq(1)').text());
+$("#password").val($(this).closest("tr").find('td:eq(2)').text());
+$("#accountNumber").val($(this).closest("tr").find('td:eq(3)').text());
+$("#address").val($(this).closest("tr").find('td:eq(4)').text());
+$("#nic").val($(this).closest("tr").find('td:eq(5)').text());
+$("#phone").val($(this).closest("tr").find('td:eq(6)').text());
+$("#resetCode").val($(this).closest("tr").find('td:eq(7)').text());
+$("#userRole").val($(this).closest("tr").find('td:eq(8)').text());
 });
 
 
@@ -61,9 +65,9 @@ $(document).on("click", ".btnRemove", function(event)
 {
 $.ajax(
 {
-url : "ItemsAPI",
+url : "UserAPI",
 type : "DELETE",
-data : "itemID=" + $(this).data("itemid"),
+data : "userID=" + $(this).data("itemid"),
 dataType : "text",
 complete : function(response, status)
 {
