@@ -150,6 +150,14 @@ if ($("#username").val().trim() == "")
 {
 return "Insert User Name";
 }
+if ($("#password").val().trim() == "")
+{
+return "Insert Password";
+}
+if ($("#accountNumber").val().trim() == "")
+{
+return "Insert Account Number";
+}
 
 return true;
 }
