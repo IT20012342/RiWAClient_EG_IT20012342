@@ -119,6 +119,9 @@ public class User {
 
 	public String updateUser(String userID, String username, String password, String accountNumber, String address, String NIC, String phone, String resetCode, String userRole) {
 		String output = "";
+		
+		String decAddress = java.net.URLDecoder.decode(address);
+		String decPassword = java.net.URLDecoder.decode(password);
 		try {
 			Connection con = connect();
 			if (con == null) {
@@ -129,9 +132,9 @@ public class User {
 			PreparedStatement preparedStmt = con.prepareStatement(query);
 			// binding values
 			preparedStmt.setString(1, username);
-			preparedStmt.setString(2, password);
+			preparedStmt.setString(2, decPassword);
 			preparedStmt.setInt(3, Integer.parseInt(accountNumber));
-			preparedStmt.setString(4, address);
+			preparedStmt.setString(4, decAddress);
 			preparedStmt.setString(5, NIC);
 			preparedStmt.setString(6, phone);
 			preparedStmt.setString(7, resetCode);
