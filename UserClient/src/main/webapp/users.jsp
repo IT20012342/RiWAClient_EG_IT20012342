@@ -23,7 +23,7 @@ if (session.getAttribute("Username") == null) {
 			<button class="btn btn-success" id="btnLogout" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);">LogOut</button>
 		</div>
 		<div class="row" style="padding-top:20px">
-			<div class="col-6">
+			<div class="col-6" style="background-color: #F3F3F3">
 				<h1>Users Management V10.1</h1>
 				<form id="formItem" name="formItem">
 					Username: <input id="username" name="username" type="text"
@@ -50,6 +50,8 @@ if (session.getAttribute("Username") == null) {
 				<div id="alertSuccess" class="alert alert-success"></div>
 				<div id="alertError" class="alert alert-danger"></div>
 				<br>
+				</div>
+				<br>
 				<div id="divItemsGrid">
 					<%
 					User userObj = new User();
@@ -57,7 +59,7 @@ if (session.getAttribute("Username") == null) {
 					%>
 				</div>
 			</div>
-		</div>
+		
 	</div>
 </body>
 </html>

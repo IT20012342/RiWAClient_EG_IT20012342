@@ -57,12 +57,12 @@ function validateLoginForm()
 // USERNAME
 if ($("#txtUsername").val().trim() == "") 
  { 
- return "Insert Username."; 
+ return "Insert Username"; 
  } 
 // PASSWORD
 if ($("#txtPassword").val().trim() == "") 
  { 
- return "Insert Password."; 
+ return "Insert Password"; 
  } 
 return true; 
 }

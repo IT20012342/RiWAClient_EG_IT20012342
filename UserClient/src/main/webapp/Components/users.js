@@ -47,9 +47,9 @@ $(document).on("click", ".btnUpdate", function(event)
 {
 $("#hidItemIDSave").val($(this).data("itemid"));
 $("#username").val($(this).closest("tr").find('td:eq(1)').text());
-$("#password").val($(this).closest("tr").find('td:eq(2)').text());
+$("#password").val(decodeURI($(this).closest("tr").find('td:eq(2)').text()));
 $("#accountNumber").val($(this).closest("tr").find('td:eq(3)').text());
-$("#address").val($(this).closest("tr").find('td:eq(4)').text());
+$("#address").val(decodeURI($(this).closest("tr").find('td:eq(4)').text()));
 $("#nic").val($(this).closest("tr").find('td:eq(5)').text());
 $("#phone").val($(this).closest("tr").find('td:eq(6)').text());
 $("#resetCode").val($(this).closest("tr").find('td:eq(7)').text());
@@ -93,7 +93,7 @@ if (status == "success")
 var resultSet = JSON.parse(response);
 if (resultSet.status.trim() == "success")
 {
-$("#alertSuccess").text("Successfully saved.");
+$("#alertSuccess").text("Successfully Saved.");
 $("#alertSuccess").show();
 $("#divItemsGrid").html(resultSet.data);
 } else if (resultSet.status.trim() == "error")
